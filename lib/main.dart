@@ -1,22 +1,48 @@
 import 'package:ecommerce_app/Notification.dart';
 import 'package:ecommerce_app/history.dart';
 import 'package:ecommerce_app/list_page.dart';
+import 'package:ecommerce_app/login.dart';
+import 'package:ecommerce_app/register.dart';
 import 'package:ecommerce_app/settings.dart';
 import "package:flutter/material.dart";
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyDrawer());
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          return Container();
+        }
+
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(debugShowCheckedModeBanner: false, home: Login(),
+          routes: {
+            "/login" :(context) => Login(),
+            "/register" :(context) => Signup(),
+            "/MyDrawer" :(context) => MyDrawer(),
+          },
+              //  MyDrawer()
+              );
+        }
+
+        // Otherwise, show something whilst waiting for initialization to complete
+        return Container();
+      },
+    );
   }
 }
 
@@ -25,7 +51,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Basic Ecom App UI"),
+          title: Text("CAM Mart"),
           actions: [
             IconButton(
                 onPressed: () {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "625183040518",
+    "project_id": "final-hackathon-213b2",
+    "storage_bucket": "final-hackathon-213b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625183040518:android:1567afc3dbf411b5bf0f87",
+        "android_client_info": {
+          "package_name": "com.cammuneeb.ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625183040518-74p11s435a1fcq02csbbr0em35qofb0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGWDR2RMfga8jORvDt7eef_AMsxNflWJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625183040518-74p11s435a1fcq02csbbr0em35qofb0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

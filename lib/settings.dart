@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/Notification.dart';
+import 'package:ecommerce_app/login.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatelessWidget {
@@ -154,7 +155,10 @@ class Settings extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login()));
+                },
                 child: Text(
                   "Log Out",
                   style: TextStyle(color: Colors.white),
